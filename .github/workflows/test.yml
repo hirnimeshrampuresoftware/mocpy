@@ -37,8 +37,7 @@ jobs:
            rm -r mocpy-env/
          done
 
-  Test-aarch64:
-    name: "Test aarch64 wheel"
+  Test-aarch64-wheel:
     strategy:
       fail-fast: false
     runs-on: ubuntu-latest
