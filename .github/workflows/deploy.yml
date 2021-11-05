@@ -1,8 +1,8 @@
 name: publish-mocpy-wheels
-on:
-  push:
-    tags:
-       - v*
+on: [push]
+#  push:
+ #   tags:
+  #     - v*
 jobs:
   # Linux is specific: because of manylinux, we have to use a docker file 
   build-linux64-wheels:
