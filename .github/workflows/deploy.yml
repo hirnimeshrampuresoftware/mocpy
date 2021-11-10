@@ -44,9 +44,10 @@ jobs:
        uses: docker/setup-qemu-action@v1
      - name: Install dependencies
        run: |
-             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
+             docker run --rm \
              -e MATURIN_USERNAME=${{ env.MATURIN_USERNAME }} \
              -e MATURIN_PASSWORD=${{ env.MATURIN_PASSWORD}} \
+             -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
              ${{ env.img }} \
              bash -exc 'curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
              source $HOME/.cargo/env && \
